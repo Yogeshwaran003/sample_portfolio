@@ -366,6 +366,8 @@ nav div a {
     align-items: center;
     color: white;
     text-align: left;
+    opacity: 0;
+    animation: fadeIn 0.7s ease-in-out 0.3s forwards;
 }
 
 .ContactMe_section input{
