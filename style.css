@@ -8,10 +8,10 @@
     navigation:auto;
 } */
  /* Hide both horizontal and vertical scrollbars */
-body, html {
+/* body, html {
     overflow: hidden;
     height: 100%;
-}
+} */
 
 body{
     background: rgb(50,48,48);
