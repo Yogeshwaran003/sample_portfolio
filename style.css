@@ -395,3 +395,7 @@ nav div a {
 .button_in_contact:hover{
     background-color: gray;
 }
+
+.contact_text{
+    padding-top: 20px;
+}
