@@ -25,17 +25,30 @@ background: linear-gradient(235deg, rgba(45,43,43,1) 0%, rgba(3,3,3,1) 45%); */
     font-family: "Gotu", serif;
 }
 nav {
-    width: 100vw;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
-    justify-content: space-around;
-    padding: 10px 20px; /* Reduced padding for smaller navbar */
+    justify-content: space-between;
+    padding: 1rem 5%;
     color: white;
-    align-items: center; /* Vertically centers the content */
+    align-items: center;
+    background: transparent;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+/* Add a class for when navbar needs dark background (mobile menu) */
+nav.nav-dark {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
 }
 
 nav h1 {
     text-shadow: 0 0 40px white;
     transition: 0.3s ease;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
 nav a {
@@ -43,28 +56,30 @@ nav a {
     text-decoration: none;
 }
 
-nav .nav-links {
+.nav-links {
     display: flex;
-    gap: 15px; /* Reduced gap between items */
+    gap: clamp(1rem, 3vw, 2rem);
     align-items: center;
+    position: relative;
 }
 
 nav p {
-    font-size: 1.1rem; /* Reduced font size */
-    padding: 8px; /* Reduced padding */
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    padding: 0.5rem;
     position: relative;
     font-weight: 500;
     text-shadow: 0 0 20px white;
     transition: color 0.3s ease-in-out;
+    white-space: nowrap;
 }
 
 nav p::before {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: white;
     opacity: 0;
     transform: scaleX(0);
@@ -74,7 +89,6 @@ nav p::before {
 
 nav p:hover {
     color: #f5f5f5;
-    text-shadow: 0 0 20px #000000;
 }
 
 nav p:hover::before {
@@ -83,41 +97,120 @@ nav p:hover::before {
     opacity: 1;
 }
 
-nav .nav-indicator {
-    position: absolute;
-    bottom: 0;
-    height: 3px;
-    background-color: white;
-    width: 0;
-    transition: width 0.3s ease-in-out;
-}
-
-nav .nav-links a:hover ~ .nav-indicator {
-    width: 100%;
-}
-
 .menu_bar {
     display: none;
+    cursor: pointer;
+    z-index: 1001;
 }
 
 .menuline {
     display: block;
     background-color: white;
     border-radius: 15px;
-    margin: 3px;
-    height: 3px;
-    width: 20px;
+    margin: 6px;
+    height: 2px;
+    width: 25px;
+    transition: 0.4s ease-in-out;
 }
 
-@media (max-width: 800px) {
-    .hello {
-        display: none;
-    }
+/* Mobile menu animation */
+.menu_bar.active .menuline:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
 
+.menu_bar.active .menuline:nth-child(2) {
+    opacity: 0;
+}
+
+.menu_bar.active .menuline:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+    nav {
+        padding: 1rem 3%;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 800px) {
+    body {
+        padding-top: 60px;
+    }
+    
     .menu_bar {
         display: block;
     }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 100%;
+        max-width: 300px;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        transition: 0.5s ease-in-out;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav p {
+        font-size: 1.2rem;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    nav p::before {
+        display: none;
+    }
+
+    .nav-indicator {
+        display: none;
+    }
+
+    nav {
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+    }
 }
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+    nav {
+        padding: 0.8rem 5%;
+    }
+
+    nav h1 {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        max-width: 100%;
+    }
+}
+
+/* Adjust main content for fixed navbar */
+.hero {
+    padding-top: 80px;
+}
+
+.Me, .ContactMe_section {
+    padding-top: 80px;
+}
+
 .hero{
     width: auto ;
     height: 100vh;
