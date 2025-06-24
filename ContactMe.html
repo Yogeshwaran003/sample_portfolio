@@ -3,51 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me - Yogeshwaran</title>
+    <title>Contact Me</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <h1><a href="index.html">Yogeshwaran</a></h1>
-        <div class="nav-links">
-            <a href="AboutMe.html"><p>About Me</p></a>
-            <a href="ContactMe.html"><p>Contact</p></a>
-            <a href="Skill.html"><p>Skills</p></a>
-            <a href="Project.html"><p>Projects</p></a>
-            <div class="nav-indicator"></div>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Yogeshwaran</a>
         </div>
-        <div class="menu_bar">
-            <div class="menuline"></div>
-            <div class="menuline"></div>
-            <div class="menuline"></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="AboutMe.html">About</a>
+            <a href="Skill.html">Skills</a>
+            <a href="Project.html">Projects</a>
+            <a href="ContactMe.html" class="active">Contact</a>
+            <a href="hireme.html">Hire Me</a>
+        </div>
+        <div class="menu-btn">
+            <div class="menu-btn__burger"></div>
         </div>
     </nav>
+
     <section class="ContactMe_section">
-        <img src="avator.png" alt="">
-        <div>
-            <table>
-                <tr>
-                    <th class="contact_text">Name:</th>
-                </tr>
-                <tr>
-                    <th><input class="normal_text" placeholder="Name" type="text"></th>
-                </tr>
-                <tr>
-                    <th class="contact_text">E-mail</th>
-                </tr>
-                <tr>
-                    <th><input class="normal_text" type="email" placeholder="Enter the email"></th>
-                </tr>
-                <tr>
-                    <th class="contact_text">Thought</th>
-                </tr>
-                <tr>
-                    <th><input type="text" class="thought_input" placeholder="Feel Free to ask "></th>
-                </tr>
-            </table>
-            <input class="button_in_contact" type="submit">
+        <div class="contact-left">
+            <div class="contact-avatar">
+                <img src="avator.png" alt="Yogeshwaran">
+            </div>
+            <h2>Get in Touch</h2>
+            <p>Feel free to reach out for collaborations, opportunities, or just to say hello! I'll get back to you as soon as possible.</p>
         </div>
-        </section>
-        <script src="navbar.js"></script>
+
+        <div class="contact-right">
+            <div class="contact-container">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label class="contact_text" for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="contact_text" for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="contact_text" for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="contact_text" for="message">Message</label>
+                        <textarea id="message" class="thought_input" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="button_in_contact">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="navbar.js"></script>
 </body>
 </html>

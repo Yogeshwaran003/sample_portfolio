@@ -256,15 +256,18 @@ nav p:hover::before {
     color: #000;
 }
 .hero-right {
-    flex-shrink: 0;
-    position: relative;
-    perspective: 1000px; /* Adds 3D depth */
+    flex: 1;
+    min-width: 300px;
+    max-width: 55vh; /* Increased from 45vh */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .flip-container {
-    width: 45vh; /* Make it responsive */
-    height: 70vh;
-    perspective: 1000px; /* Creates a 3D effect */
+    width: 55vh; /* Increased from 45vh */
+    height: 75vh; /* Increased from 70vh */
+    perspective: 1000px;
 }
 
 .img-overlay {
@@ -284,7 +287,7 @@ nav p:hover::before {
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
-    backface-visibility: hidden; /* Prevents flickering */
+    backface-visibility: hidden;
 }
 
 .overlay-text {
@@ -432,67 +435,222 @@ nav div a {
     align-items: center;
     flex-wrap: wrap;
 }
-.aboutMe-left{
+.aboutMe-left {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-basis: 35%;
-    opacity: 0;
-    animation: fadeIn 0.7s ease-in-out 0.6s forwards;
 }
 .aboutMe-right{
     flex-basis: 50%;
     opacity: 0;
     animation: fadeIn 0.7s ease-in-out 0.3s forwards;
 }
-.aboutmeimg{
-    border-radius: 15px;
-    height: 50vh;
+.aboutmeimg {
+    width: 45vh; /* Back to original size */
+    height: 65vh; /* Back to original size */
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.ContactMe_section{
-    /* background-color: #ffffff91; */
+/* Contact Section New Layout */
+.ContactMe_section {
     display: flex;
-    width: 900px;
-    border-radius: 15px;
-    margin-left: 26vw;
-    margin-top:10vh;
-    justify-content: space-around;
     align-items: center;
-    color: white;
-    text-align: left;
-    opacity: 0;
-    animation: fadeIn 0.7s ease-in-out 0.3s forwards;
+    justify-content: center;
+    gap: 4rem;
+    padding: 120px 5% 50px;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
 }
 
-.ContactMe_section input{
-    width: 400px;
+.ContactMe_section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(100,255,218,0.1), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(0,188,212,0.1), transparent 50%);
+    pointer-events: none;
+}
+
+.contact-left {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    padding: 5px;
+    background: linear-gradient(135deg, #64ffda, #00bcd4);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.contact-left h2 {
+    color: white;
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.contact-left p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-right {
+    flex: 1;
+    max-width: 600px;
+}
+
+.contact-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact_text {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.ContactMe_section input,
+.ContactMe_section textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    padding: 10px;
-    border: 1px solid snow;
     color: white;
-    background: transparent;
-
-}
-.thought_input{
-    height: 150px; 
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-.normal_text{
-    height: 40px;;
+.ContactMe_section input:focus,
+.ContactMe_section textarea:focus {
+    outline: none;
+    border-color: #64ffda;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
 }
-.button_in_contact{
-    height: 50px;
-    margin-top: 20px;
+
+.thought_input {
+    height: 120px;
+    resize: vertical;
+}
+
+.button_in_contact {
+    width: auto;
+    min-width: 150px;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #64ffda, #00bcd4);
+    color: black;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
-    transition: 0.3s;
-}
-.button_in_contact:hover{
-    background-color: gray;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.contact_text{
-    padding-top: 20px;
+.button_in_contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+}
+
+/* Responsive adjustments for Contact page */
+@media (max-width: 1024px) {
+    .ContactMe_section {
+        gap: 2rem;
+        padding: 100px 3% 40px;
+    }
+
+    .contact-avatar {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ContactMe_section {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 80px 3% 30px;
+    }
+
+    .contact-left, .contact-right {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .contact-avatar {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contact-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ContactMe_section {
+        padding: 70px 2% 20px;
+    }
+
+    .contact-avatar {
+        width: 180px;
+        height: 180px;
+    }
+
+    .contact-container {
+        padding: 1rem;
+    }
+
+    .contact-left h2 {
+        font-size: 1.8rem;
+    }
 }
 
 /* Skills Section Styles */
@@ -885,14 +1043,15 @@ section {
 .hero-right {
     flex: 1;
     min-width: 300px;
-    max-width: 600px;
+    max-width: 55vh; /* Increased from 45vh */
     padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .flip-container {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3/4;
+    width: 55vh; /* Increased from 45vh */
+    height: 75vh; /* Increased from 70vh */
     perspective: 1000px;
 }
 
@@ -910,6 +1069,8 @@ section {
     min-width: 300px;
     max-width: 500px;
     padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .aboutMe-right {
@@ -923,152 +1084,11 @@ section {
 }
 
 .aboutmeimg {
-    width: 100%;
-    height: auto;
+    width: 45vh; /* Back to original size */
+    height: 65vh; /* Back to original size */
+    object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Contact Section */
-.ContactMe_section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.ContactMe_section img {
-    width: clamp(150px, 30vw, 250px);
-    height: auto;
-    margin-bottom: 2rem;
-}
-
-.ContactMe_section table {
-    width: 100%;
-    max-width: 600px;
-}
-
-.ContactMe_section input {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
-    color: white;
-    font-size: clamp(0.9rem, 2vw, 1rem);
-}
-
-.thought_input {
-    height: 100px;
-    resize: vertical;
-}
-
-.contact_text {
-    color: white;
-    text-align: left;
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    padding: 10px 0;
-}
-
-.button_in_contact {
-    width: 100%;
-    max-width: 200px;
-    padding: 12px 24px;
-    border-radius: 8px;
-    background: white;
-    color: black;
-    border: none;
-    font-size: clamp(0.9rem, 2vw, 1rem);
-    cursor: pointer;
-    transition: 0.3s ease;
-    margin-top: 20px;
-}
-
-.button_in_contact:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-}
-
-/* Tablet Styles (768px - 1024px) */
-@media (max-width: 1024px) {
-    section {
-        padding: 100px 4% 40px;
-    }
-
-    .hero-left, .hero-right {
-        padding: 15px;
-    }
-
-    .aboutMe-left, .aboutMe-right {
-        padding: 15px;
-    }
-
-    .projects-container, .skills-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Mobile Styles (480px - 767px) */
-@media (max-width: 767px) {
-    section {
-        padding: 80px 3% 30px;
-    }
-
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .hero-left, .hero-right {
-        min-width: 250px;
-        padding: 10px;
-    }
-
-    .Me {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .aboutMe-left, .aboutMe-right {
-        min-width: 250px;
-        padding: 10px;
-    }
-
-    .projects-container, .skills-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .ContactMe_section table {
-        width: 90%;
-    }
-}
-
-/* Small Mobile Styles (< 480px) */
-@media (max-width: 480px) {
-    section {
-        padding: 70px 2% 20px;
-    }
-
-    .hero-left button {
-        width: 90%;
-        margin: 5px auto;
-    }
-
-    .flip-container {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .project-card, .skill-card {
-        margin: 0 10px;
-    }
-
-    .ContactMe_section input,
-    .ContactMe_section .button_in_contact {
-        width: 95%;
-    }
 }
 
 /* Landscape Mode Adjustments */
@@ -1088,7 +1108,13 @@ section {
     }
 
     .flip-container {
-        height: 60vh;
+        width: 35vh; /* Increased from 30vh */
+        height: 50vh; /* Increased from 45vh */
+    }
+
+    .aboutmeimg {
+        width: 35vh; /* Increased from 30vh */
+        height: 50vh; /* Increased from 45vh */
     }
 }
 
