@@ -456,7 +456,7 @@ nav div a {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Contact Section New Layout */
+/* Contact Section Layout */
 .ContactMe_section {
     min-height: 100vh;
     padding: 100px 5% 50px;
@@ -465,24 +465,12 @@ nav div a {
     justify-content: center;
     gap: 4rem;
     position: relative;
-    overflow: hidden;
-}
-
-.ContactMe_section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top right, rgba(100,255,218,0.1), transparent 50%),
-                radial-gradient(circle at bottom left, rgba(0,188,212,0.1), transparent 50%);
-    pointer-events: none;
+    overflow-x: hidden;
 }
 
 .contact-left {
     flex: 1;
-    max-width: 500px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -490,8 +478,8 @@ nav div a {
 }
 
 .contact-avatar {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     border-radius: 20px;
     padding: 5px;
     background: linear-gradient(135deg, #64ffda, #00bcd4);
@@ -509,21 +497,22 @@ nav div a {
 
 .contact-left h2 {
     color: white;
-    font-size: clamp(2rem, 3vw, 3rem);
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
     margin-bottom: 1rem;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .contact-left p {
     color: rgba(255, 255, 255, 0.8);
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
     max-width: 400px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 .contact-right {
     flex: 1;
-    max-width: 600px;
+    max-width: 500px;
 }
 
 .contact-container {
@@ -575,80 +564,174 @@ nav div a {
 .thought_input {
     height: 120px;
     resize: vertical;
+    min-height: 120px;
+    max-height: 300px;
 }
 
-.button_in_contact {
-    width: auto;
-    min-width: 150px;
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, #64ffda, #00bcd4);
-    color: black;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+/* Responsive styles for Contact page */
+@media (max-width: 1200px) {
+    .ContactMe_section {
+        gap: 3rem;
+        padding: 90px 4% 40px;
+    }
+
+    .contact-avatar {
+        width: 250px;
+        height: 250px;
+    }
 }
 
-.button_in_contact:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
-}
-
-/* Responsive adjustments for Contact page */
 @media (max-width: 1024px) {
     .ContactMe_section {
         padding: 90px 3% 40px;
     }
 
-    .contact-avatar {
-        width: 250px;
-        height: 250px;
+    .contact-container {
+        padding: 2rem;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .ContactMe_section {
-        padding: 80px 3% 30px;
-        gap: 2rem;
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 80px 5% 40px;
     }
 
-    .contact-left, .contact-right {
+    .contact-left, 
+    .contact-right {
+        max-width: 600px;
         width: 100%;
-        max-width: 500px;
     }
 
     .contact-avatar {
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
         margin-bottom: 1.5rem;
+    }
+
+    .contact-left h2 {
+        font-size: clamp(1.8rem, 3vw, 2.2rem);
+    }
+
+    .contact-left p {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ContactMe_section {
+        padding: 80px 4% 30px;
     }
 
     .contact-container {
         padding: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .ContactMe_section {
-        padding: 70px 2% 20px;
     }
 
     .contact-avatar {
         width: 180px;
         height: 180px;
-    }
-
-    .contact-container {
-        padding: 1.5rem;
+        margin-bottom: 1.2rem;
     }
 
     .contact-left h2 {
         font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .contact-left p {
+        font-size: 0.9rem;
+    }
+
+    .form-group {
+        gap: 0.4rem;
+    }
+
+    .ContactMe_section input,
+    .ContactMe_section textarea {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .thought_input {
+        height: 100px;
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .ContactMe_section {
+        padding: 70px 3% 20px;
+    }
+
+    .contact-container {
+        padding: 1.2rem;
+    }
+
+    .contact-avatar {
+        width: 160px;
+        height: 160px;
+    }
+
+    .contact-left h2 {
+        font-size: 1.6rem;
+    }
+
+    .contact-left p {
+        font-size: 0.85rem;
+    }
+
+    .contact_text {
+        font-size: 0.9rem;
+    }
+
+    .ContactMe_section input,
+    .ContactMe_section textarea {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Height-based responsive adjustments */
+@media (max-height: 800px) {
+    .ContactMe_section {
+        padding: 80px 5% 30px;
+    }
+
+    .contact-avatar {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-left h2 {
+        margin-bottom: 0.8rem;
+    }
+
+    .thought_input {
+        height: 100px;
+        min-height: 100px;
+    }
+}
+
+@media (max-height: 700px) {
+    .ContactMe_section {
+        padding: 70px 5% 20px;
+    }
+
+    .contact-avatar {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 1rem;
+    }
+
+    .form-group {
+        gap: 0.3rem;
+    }
+
+    .ContactMe_section input,
+    .ContactMe_section textarea {
+        padding: 0.8rem;
     }
 }
 
