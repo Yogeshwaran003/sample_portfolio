@@ -458,14 +458,14 @@ nav div a {
 
 /* Contact Section New Layout */
 .ContactMe_section {
+    min-height: 100vh;
+    padding: 100px 5% 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 4rem;
-    padding: 120px 5% 50px;
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
 }
 
 .ContactMe_section::before {
@@ -602,8 +602,7 @@ nav div a {
 /* Responsive adjustments for Contact page */
 @media (max-width: 1024px) {
     .ContactMe_section {
-        gap: 2rem;
-        padding: 100px 3% 40px;
+        padding: 90px 3% 40px;
     }
 
     .contact-avatar {
@@ -614,19 +613,19 @@ nav div a {
 
 @media (max-width: 768px) {
     .ContactMe_section {
-        flex-direction: column;
-        gap: 2rem;
         padding: 80px 3% 30px;
+        gap: 2rem;
     }
 
     .contact-left, .contact-right {
-        max-width: 100%;
         width: 100%;
+        max-width: 500px;
     }
 
     .contact-avatar {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
+        margin-bottom: 1.5rem;
     }
 
     .contact-container {
@@ -645,7 +644,7 @@ nav div a {
     }
 
     .contact-container {
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     .contact-left h2 {
@@ -1181,7 +1180,7 @@ section {
 /* Hire Me Section Styles */
 .hire-me-section {
     min-height: 100vh;
-    padding: 120px 5% 50px;
+    padding: 100px 5% 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1211,12 +1210,13 @@ section {
 
 .hire-me-container {
     display: flex;
-    gap: 4rem;
+    gap: 3rem;
     justify-content: center;
     align-items: stretch;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding-bottom: 2rem;
 }
 
 .hire-me-card {
@@ -1308,7 +1308,7 @@ section {
 /* Responsive styles for Hire Me section */
 @media (max-width: 1024px) {
     .hire-me-section {
-        padding: 100px 3% 40px;
+        padding: 90px 3% 40px;
     }
 
     .hire-me-container {
@@ -1332,7 +1332,7 @@ section {
 
 @media (max-width: 480px) {
     .hire-me-section {
-        padding: 80px 2% 30px;
+        padding: 70px 2% 20px;
     }
 
     .hire-me-card {
@@ -1358,5 +1358,42 @@ section {
     .hire-button {
         padding: 0.8rem;
         font-size: 0.9rem;
+    }
+}
+
+/* Ensure content fits on smaller height screens */
+@media (max-height: 800px) {
+    .hire-me-section {
+        padding: 80px 5% 30px;
+    }
+
+    .hire-me-card {
+        padding: 2rem;
+    }
+
+    .card-icon {
+        margin-bottom: 1rem;
+    }
+
+    .hire-me-card h3 {
+        margin-bottom: 1.5rem;
+    }
+
+    .card-content ul {
+        margin-bottom: 1.5rem;
+    }
+
+    .card-content li {
+        margin-bottom: 0.75rem;
+    }
+
+    .rate {
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-avatar {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 1.5rem;
     }
 }
