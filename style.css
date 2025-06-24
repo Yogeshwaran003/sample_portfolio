@@ -1177,3 +1177,186 @@ section {
         color: white;
     }
 }
+
+/* Hire Me Section Styles */
+.hire-me-section {
+    min-height: 100vh;
+    padding: 120px 5% 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hire-me-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(100,255,218,0.1), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(0,188,212,0.1), transparent 50%);
+    pointer-events: none;
+}
+
+.hire-me-section h2 {
+    color: white;
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-bottom: 3rem;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.hire-me-container {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hire-me-card {
+    flex: 1;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hire-me-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: #64ffda;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+}
+
+.hire-me-card h3 {
+    color: white;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.card-content {
+    width: 100%;
+}
+
+.card-content ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.card-content li {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+}
+
+.card-content li i {
+    color: #64ffda;
+    font-size: 1rem;
+}
+
+.rate {
+    color: #64ffda;
+    font-size: clamp(1.1rem, 1.3vw, 1.2rem);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.hire-button {
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #64ffda, #00bcd4);
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hire-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+}
+
+/* Responsive styles for Hire Me section */
+@media (max-width: 1024px) {
+    .hire-me-section {
+        padding: 100px 3% 40px;
+    }
+
+    .hire-me-container {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hire-me-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .hire-me-card {
+        width: 100%;
+        max-width: 500px;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hire-me-section {
+        padding: 80px 2% 30px;
+    }
+
+    .hire-me-card {
+        padding: 1.5rem;
+    }
+
+    .card-icon {
+        font-size: 2.5rem;
+    }
+
+    .hire-me-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .card-content li {
+        font-size: 0.9rem;
+    }
+
+    .rate {
+        font-size: 1rem;
+    }
+
+    .hire-button {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}

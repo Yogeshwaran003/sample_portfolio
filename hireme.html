@@ -3,35 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hire Me - Yogeshwaran</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <h1><a href="index.html">Yogeshwaran</a></h1>
-        <div class="hello">
-        <a href="AboutMe.html"><p>About Me</p></a>
-        <a href="ContactMe.html"><p>Contact</p></a>
-        <a href="Skill.html"><p>Skills</p></a>
-        <a href="Project.html"><p>Projects</p></a>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Yogeshwaran</a>
         </div>
-        <div class="menu_bar">
-            <div class="menuline"></div>
-            <div class="menuline"></div>
-            <div class="menuline"></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="AboutMe.html">About</a>
+            <a href="Skill.html">Skills</a>
+            <a href="Project.html">Projects</a>
+            <a href="ContactMe.html">Contact</a>
+            <a href="hireme.html" class="active">Hire Me</a>
+        </div>
+        <div class="menu-btn">
+            <div class="menu-btn__burger"></div>
         </div>
     </nav>
-    <section class="HireMe">
-       <div class="inner-hire-me">
-        <div class="hireMe-left">
-            <img src="icons8-working-96.png" alt="">
-            <h1>As a Freelancer</h1>
+
+    <section class="hire-me-section">
+        <h2>Choose Your Collaboration Style</h2>
+        <div class="hire-me-container">
+            <div class="hire-me-card freelance">
+                <div class="card-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Hire as Freelancer</h3>
+                <div class="card-content">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Flexible engagement</li>
+                        <li><i class="fas fa-check"></i> Project-based work</li>
+                        <li><i class="fas fa-check"></i> Custom solutions</li>
+                        <li><i class="fas fa-check"></i> Direct communication</li>
+                    </ul>
+                    <p class="rate">Starting from $30/hour</p>
+                    <a href="ContactMe.html" class="hire-button">Start a Project</a>
+                </div>
+            </div>
+
+            <div class="hire-me-card employee">
+                <div class="card-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Hire as Employee</h3>
+                <div class="card-content">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Full-time commitment</li>
+                        <li><i class="fas fa-check"></i> Team collaboration</li>
+                        <li><i class="fas fa-check"></i> Long-term growth</li>
+                        <li><i class="fas fa-check"></i> Company culture</li>
+                    </ul>
+                    <p class="rate">Open to relocation</p>
+                    <a href="ContactMe.html" class="hire-button">Discuss Opportunity</a>
+                </div>
+            </div>
         </div>
-        <div class="hireMe-Right">
-            <img src="icons8-work-100.png" alt="">
-            <h1>As a Employee</h1>
-        </div>
-       </div>
     </section>
+
+    <script src="navbar.js"></script>
 </body>
 </html>
