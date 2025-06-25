@@ -426,7 +426,7 @@ nav div a {
         height: 35vh;
     }
 }
-.Me{
+.Me {
     color: #ffffff;
     display: flex;
     height: 100vh;
@@ -434,7 +434,9 @@ nav div a {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    padding: 0 5%;
 }
+
 .aboutMe-left {
     flex: 1;
     min-width: 300px;
@@ -443,14 +445,43 @@ nav div a {
     display: flex;
     justify-content: center;
 }
-.aboutMe-right{
-    flex-basis: 50%;
+
+.aboutMe-right {
+    flex: 1;
+    max-width: 600px;
     opacity: 0;
     animation: fadeIn 0.7s ease-in-out 0.3s forwards;
 }
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.about-content .greeting {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-content h1 {
+    font-size: 2.5rem;
+    margin: 0.2rem 0;
+    background: linear-gradient(135deg, #64ffda, #00bcd4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
 .aboutmeimg {
-    width: 45vh; /* Back to original size */
-    height: 65vh; /* Back to original size */
+    width: 45vh;
+    height: 65vh;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -470,49 +501,31 @@ nav div a {
 
 .contact-left {
     flex: 1;
-    max-width: 400px;
+    max-width: 500px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: center;
 }
 
 .contact-avatar {
-    width: 280px;
-    height: 280px;
-    border-radius: 20px;
-    padding: 5px;
-    background: linear-gradient(135deg, #64ffda, #00bcd4);
-    margin-bottom: 2rem;
+    width: 100%;
+    height: 600px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-avatar img {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
-    object-fit: cover;
-}
-
-.contact-left h2 {
-    color: white;
-    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
-
-.contact-left p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
-    max-width: 400px;
-    margin: 0 auto;
-    line-height: 1.6;
+    object-fit: contain;
 }
 
 .contact-right {
     flex: 1;
-    max-width: 500px;
+    max-width: 450px;
 }
 
 .contact-container {
@@ -525,47 +538,111 @@ nav div a {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+.contact-container h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
 .contact-form {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
 }
 
-.contact_text {
-    color: white;
-    font-size: 1rem;
-    font-weight: 500;
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 15px;
+    color: #64ffda;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.textarea-icon i {
+    top: 15px;
 }
 
 .ContactMe_section input,
 .ContactMe_section textarea {
     width: 100%;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 1rem 1rem 3rem;
+    background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    border-radius: 12px;
     color: white;
     font-size: 1rem;
     transition: all 0.3s ease;
+    font-family: "Gotu", serif;
 }
 
 .ContactMe_section input:focus,
 .ContactMe_section textarea:focus {
     outline: none;
     border-color: #64ffda;
-    box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.ContactMe_section input:focus + i,
+.ContactMe_section textarea:focus + i {
+    color: #00bcd4;
+    transform: scale(1.1);
 }
 
 .thought_input {
     height: 120px;
     resize: vertical;
     min-height: 120px;
-    max-height: 300px;
+    max-height: 200px;
+    padding-top: 1rem !important;
+}
+
+.button_in_contact {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #64ffda, #00bcd4);
+    border: none;
+    border-radius: 12px;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Gotu", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.button_in_contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
+}
+
+.button_in_contact:active {
+    transform: translateY(0);
+}
+
+.button_in_contact i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.button_in_contact:hover i {
+    transform: translateX(3px);
 }
 
 /* Responsive styles for Contact page */
@@ -576,46 +653,29 @@ nav div a {
     }
 
     .contact-avatar {
-        width: 250px;
-        height: 250px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .ContactMe_section {
-        padding: 90px 3% 40px;
-    }
-
-    .contact-container {
-        padding: 2rem;
+        height: 500px;
     }
 }
 
 @media (max-width: 900px) {
     .ContactMe_section {
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 2rem;
         padding: 80px 5% 40px;
     }
 
     .contact-left, 
     .contact-right {
-        max-width: 600px;
+        max-width: 500px;
         width: 100%;
     }
 
     .contact-avatar {
-        width: 220px;
-        height: 220px;
-        margin-bottom: 1.5rem;
+        height: 400px;
     }
 
-    .contact-left h2 {
-        font-size: clamp(1.8rem, 3vw, 2.2rem);
-    }
-
-    .contact-left p {
-        max-width: 500px;
+    .contact-container {
+        padding: 2rem;
     }
 }
 
@@ -629,109 +689,21 @@ nav div a {
     }
 
     .contact-avatar {
-        width: 180px;
-        height: 180px;
-        margin-bottom: 1.2rem;
+        height: 350px;
     }
 
-    .contact-left h2 {
+    .contact-container h2 {
         font-size: 1.8rem;
-        margin-bottom: 0.8rem;
-    }
-
-    .contact-left p {
-        font-size: 0.9rem;
-    }
-
-    .form-group {
-        gap: 0.4rem;
-    }
-
-    .ContactMe_section input,
-    .ContactMe_section textarea {
-        padding: 0.8rem;
-        font-size: 0.95rem;
-    }
-
-    .thought_input {
-        height: 100px;
-        min-height: 100px;
-    }
-}
-
-@media (max-width: 400px) {
-    .ContactMe_section {
-        padding: 70px 3% 20px;
-    }
-
-    .contact-container {
-        padding: 1.2rem;
-    }
-
-    .contact-avatar {
-        width: 160px;
-        height: 160px;
-    }
-
-    .contact-left h2 {
-        font-size: 1.6rem;
-    }
-
-    .contact-left p {
-        font-size: 0.85rem;
-    }
-
-    .contact_text {
-        font-size: 0.9rem;
-    }
-
-    .ContactMe_section input,
-    .ContactMe_section textarea {
-        padding: 0.7rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* Height-based responsive adjustments */
-@media (max-height: 800px) {
-    .ContactMe_section {
-        padding: 80px 5% 30px;
-    }
-
-    .contact-avatar {
-        width: 200px;
-        height: 200px;
         margin-bottom: 1.5rem;
     }
 
-    .contact-left h2 {
-        margin-bottom: 0.8rem;
-    }
-
-    .thought_input {
-        height: 100px;
-        min-height: 100px;
-    }
-}
-
-@media (max-height: 700px) {
-    .ContactMe_section {
-        padding: 70px 5% 20px;
-    }
-
-    .contact-avatar {
-        width: 180px;
-        height: 180px;
-        margin-bottom: 1rem;
-    }
-
-    .form-group {
-        gap: 0.3rem;
+    .contact-right {
+        max-width: 100%;
     }
 
     .ContactMe_section input,
     .ContactMe_section textarea {
-        padding: 0.8rem;
+        font-size: 0.95rem;
     }
 }
 
@@ -1157,17 +1129,40 @@ section {
 
 .aboutMe-right {
     flex: 1;
-    min-width: 300px;
     max-width: 600px;
-    padding: 20px;
-    color: white;
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    opacity: 0;
+    animation: fadeIn 0.7s ease-in-out 0.3s forwards;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.about-content .greeting {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-content h1 {
+    font-size: 2.5rem;
+    margin: 0.2rem 0;
+    background: linear-gradient(135deg, #64ffda, #00bcd4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-content p {
+    font-size: 1rem;
     line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
 }
 
 .aboutmeimg {
-    width: 45vh; /* Back to original size */
-    height: 65vh; /* Back to original size */
+    width: 45vh;
+    height: 65vh;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
