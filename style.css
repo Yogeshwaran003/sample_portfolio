@@ -451,6 +451,8 @@ nav div a {
     height: 65vh;
     perspective: 1000px;
     cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 0.7s ease-in-out forwards;
 }
 
 .flip-card-inner {
@@ -497,6 +499,7 @@ nav div a {
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.7s ease-in-out;
 }
 
 .humor-text {
@@ -1203,6 +1206,8 @@ section {
     height: 65vh;
     perspective: 1000px;
     cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 0.7s ease-in-out forwards;
 }
 
 .flip-card-inner {
@@ -1249,6 +1254,7 @@ section {
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.7s ease-in-out;
 }
 
 .humor-text {
