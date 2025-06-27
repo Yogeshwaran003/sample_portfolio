@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="page-transition"></div>
     <nav>
-        <h1><a href="index.html">Yogeshwaran</a></h1>
+        <h1><a href="index.html" data-transition>Yogeshwaran</a></h1>
         <div class="nav-links">  
-            <a href="AboutMe.html"><p>About Me</p></a>
-            <a href="ContactMe.html"><p>Contact</p></a>
-            <a href="Skill.html"><p>Skills</p></a>
-            <a href="Project.html"><p>Projects</p></a>
+            <a href="AboutMe.html" data-transition><p>About Me</p></a>
+            <a href="ContactMe.html" data-transition><p>Contact</p></a>
+            <a href="Skill.html" data-transition><p>Skills</p></a>
+            <a href="Project.html" data-transition><p>Projects</p></a>
             <div class="nav-indicator"></div> 
         </div>
         <div class="menu_bar">
@@ -23,29 +24,32 @@
         </div>
     </nav>
 
-    <section class="Me">
-        <div class="aboutMe-left">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="alsome.jpg" class="aboutmeimg" alt="">
-                    </div>
-                    <div class="flip-card-back">
-                        <p class="humor-text">I used to think coding was fun—until DSA kicked in. Every developer celebrates when their code magically works, even if they don't know why. Then they tweak one line to understand it better… and suddenly, nothing works. Moments like that really make you rethink your career decisions 🤯</p>
+    <div class="content-wrapper">
+        <section class="Me">
+            <div class="aboutMe-left">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="alsome.jpg" class="aboutmeimg" alt="">
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="humor-text">I used to think coding was fun—until DSA kicked in. Every developer celebrates when their code magically works, even if they don't know why. Then they tweak one line to understand it better… and suddenly, nothing works. Moments like that really make you rethink your career decisions 🤯</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="aboutMe-right">
-            <div class="about-content">
-                <span class="greeting">Hey, I'm</span>
-                <h1>Yogeshwaran</h1>
-                <p>A passionate web developer with a strong focus on building modern, high-performance websites and applications. I specialize in React and Express, and I'm always exploring new technologies to enhance my skills.</p>
-                <p>Beyond coding, I'm also passionate about fitness and strength training. When I'm not at my desk writing code, you'll probably find me in the gym working on my next personal best.</p>
+            <div class="aboutMe-right">
+                <div class="about-content">
+                    <span class="greeting">Hey, I'm</span>
+                    <h1>Yogeshwaran</h1>
+                    <p>A passionate web developer with a strong focus on building modern, high-performance websites and applications. I specialize in React and Express, and I'm always exploring new technologies to enhance my skills.</p>
+                    <p>Beyond coding, I'm also passionate about fitness and strength training. When I'm not at my desk writing code, you'll probably find me in the gym working on my next personal best.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <script src="navbar.js"></script>
+    <script src="transitions.js"></script>
 </body>
 </html>

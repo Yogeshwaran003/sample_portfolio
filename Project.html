@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <div class="page-transition"></div>
     <nav>
-        <h1><a href="index.html">Yogeshwaran</a></h1>
+        <h1><a href="index.html" data-transition>Yogeshwaran</a></h1>
         <div class="nav-links">
-            <a href="AboutMe.html"><p>About Me</p></a>
-            <a href="ContactMe.html"><p>Contact</p></a>
-            <a href="Skill.html"><p>Skills</p></a>
-            <a href="Project.html"><p>Projects</p></a>
+            <a href="AboutMe.html" data-transition><p>About Me</p></a>
+            <a href="ContactMe.html" data-transition><p>Contact</p></a>
+            <a href="Skill.html" data-transition><p>Skills</p></a>
+            <a href="Project.html" data-transition><p>Projects</p></a>
             <div class="nav-indicator"></div>
         </div>
         <div class="menu_bar">
@@ -23,90 +24,91 @@
             <div class="menuline"></div>
         </div>
     </nav>
-
-    <section class="projects-section">
-        <h2>My Projects</h2>
-        <div class="projects-container">
-            <!-- Habit and Goal Tracker -->
-            <div class="project-card completed">
-                <div class="project-content">
-                    <div class="project-header">
-                        <h3>Habit and Goal Tracker</h3>
-                        <span class="status completed">Completed</span>
-                    </div>
-                    <p class="project-description">
-                        A comprehensive application designed to help users track their daily habits and long-term goals. 
-                        Features include daily habit tracking, goal setting with milestones, progress visualization, 
-                        and reminder notifications.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Express</span>
-                        <span class="tech-tag">MongoDB</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CRM System -->
-            <div class="project-card upcoming">
-                <div class="project-content">
-                    <div class="project-header">
-                        <h3>Customer Relationship Management</h3>
-                        <span class="status upcoming">Upcoming</span>
-                    </div>
-                    <p class="project-description">
-                        A robust CRM system designed to streamline customer interactions, manage leads, and analyze customer data. 
-                        Will include features for contact management, sales pipeline tracking, and automated reporting.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                    </div>
-                    <div class="project-status-message">
-                        <i class="fas fa-clock"></i> Coming Soon
-                    </div>
-                </div>
-            </div>
-
-            <!-- Barter Application -->
-            <div class="project-card ongoing">
-                <div class="project-content">
-                    <div class="project-header">
-                        <h3>Barter Application</h3>
-                        <span class="status ongoing">In Progress</span>
-                    </div>
-                    <p class="project-description">
-                        An innovative platform enabling users to exchange goods and services without monetary transactions. 
-                        Features include item listing, matching algorithm, secure chat, and reputation system.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Express</span>
-                        <span class="tech-tag">MongoDB</span>
-                    </div>
-                    <div class="project-progress">
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 60%"></div>
+    <div class="content-wrapper">
+        <section class="projects-section">
+            <h2>My Projects</h2>
+            <div class="projects-container">
+                <!-- Habit and Goal Tracker -->
+                <div class="project-card completed">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Habit and Goal Tracker</h3>
+                            <span class="status completed">Completed</span>
                         </div>
-                        <span class="progress-text">60% Complete</span>
+                        <p class="project-description">
+                            A comprehensive application designed to help users track their daily habits and long-term goals. 
+                            Features include daily habit tracking, goal setting with milestones, progress visualization, 
+                            and reminder notifications.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CRM System -->
+                <div class="project-card upcoming">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Customer Relationship Management</h3>
+                            <span class="status upcoming">Upcoming</span>
+                        </div>
+                        <p class="project-description">
+                            A robust CRM system designed to streamline customer interactions, manage leads, and analyze customer data. 
+                            Will include features for contact management, sales pipeline tracking, and automated reporting.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-status-message">
+                            <i class="fas fa-clock"></i> Coming Soon
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barter Application -->
+                <div class="project-card ongoing">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Barter Application</h3>
+                            <span class="status ongoing">In Progress</span>
+                        </div>
+                        <p class="project-description">
+                            An innovative platform enabling users to exchange goods and services without monetary transactions. 
+                            Features include item listing, matching algorithm, secure chat, and reputation system.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-progress">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%"></div>
+                            </div>
+                            <span class="progress-text">60% Complete</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    </div>
     <script src="navbar.js"></script>
+    <script src="transitions.js"></script>
 </body>
 </html>

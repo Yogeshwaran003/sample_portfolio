@@ -7,13 +7,14 @@
     <title>Yogeshwaran - Portfolio</title>
 </head>
 <body>
+    <div class="page-transition"></div>
     <nav>
-        <h1><a href="index.html">Yogeshwaran</a></h1>
+        <h1><a href="index.html" data-transition>Yogeshwaran</a></h1>
         <div class="nav-links">
-            <a href="AboutMe.html"><p>About Me</p></a>
-            <a href="ContactMe.html"><p>Contact</p></a>
-            <a href="Skill.html"><p>Skills</p></a>
-            <a href="Project.html"><p>Projects</p></a>
+            <a href="AboutMe.html" data-transition><p>About Me</p></a>
+            <a href="ContactMe.html" data-transition><p>Contact</p></a>
+            <a href="Skill.html" data-transition><p>Skills</p></a>
+            <a href="Project.html" data-transition><p>Projects</p></a>
             <div class="nav-indicator"></div>
         </div>
         <div class="menu_bar">
@@ -22,31 +23,34 @@
             <div class="menuline"></div>
         </div>
     </nav>
-    <section class="hero">
-        <div class="hero-left">
-            <h1>Hi, Im Yogeshwaran</h1>
-            <h3>Software Developer</h3>
-            <a href="hireme.html"><button>Hire Me</button></a>
-            <a href="Yogeshwaran_Software_Developer_resume.pdf"> <button>Download CV</button></a>
-        </div>
-        <div class="hero-right">
-            <div class="flip-container">
-                <div class="img-overlay">
-                    <img class="img" src="me.jpg" alt="">
-                    <div class="overlay-text">
-                        Yeah... that's me on stage, trying to teach my buddy  
-                        in the Entrepreneurship Development Club. I thought I had  
-                        it all under control, but as soon as I grabbed the mic,  
-                        my heart started racing faster!  
-                        Fun fact: My biggest lesson that day wasn't about entrepreneurship,  
-                        it was how to survive stage fear without passing out! 😂
+    <div class="content-wrapper">
+        <section class="hero">
+            <div class="hero-left">
+                <h1>Hi, Im Yogeshwaran</h1>
+                <h3>Software Developer</h3>
+                <a href="hireme.html"><button>Hire Me</button></a>
+                <a href="Yogeshwaran_Software_Developer_resume.pdf"> <button>Download CV</button></a>
+            </div>
+            <div class="hero-right">
+                <div class="flip-container">
+                    <div class="img-overlay">
+                        <img class="img" src="me.jpg" alt="">
+                        <div class="overlay-text">
+                            Yeah... that's me on stage, trying to teach my buddy  
+                            in the Entrepreneurship Development Club. I thought I had  
+                            it all under control, but as soon as I grabbed the mic,  
+                            my heart started racing faster!  
+                            Fun fact: My biggest lesson that day wasn't about entrepreneurship,  
+                            it was how to survive stage fear without passing out! 😂
+                        </div>
                     </div>
                 </div>
+                
             </div>
             
-        </div>
-        
-    </section>
+        </section>
+    </div>
     <script src="navbar.js"></script>
+    <script src="transitions.js"></script>
 </body>
 </html>
